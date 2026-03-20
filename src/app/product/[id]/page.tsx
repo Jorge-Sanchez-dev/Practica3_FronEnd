@@ -32,9 +32,9 @@ export default async function ProductDetailPage({ params }: Props) {
             <p><strong>Precio:</strong> {product.price} €</p>
             <p>
               <strong>Stock:</strong> {product.stock}{" "}
-              {product.stock <= 5 ? "(Quedan pocas unidades)" : ""}
+               {product.stock < 5 && "Pocas unidades"}
             </p>
-
+    
           <div className="valoracion">
             <p>
               <strong>Valoración:</strong>

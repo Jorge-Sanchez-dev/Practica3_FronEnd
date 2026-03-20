@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# API Productos
 
-## Getting Started
+Aplicación web desarrollada con Next.js, React y TypeScript que consume una API pública de productos para mostrar un listado de productos y permitir la búsqueda por nombre.
+La aplicación está estructurada por componentes y utiliza una ruta dinámica para acceder al detalle de cada producto de forma individual.
 
-First, run the development server:
+## Como ejecutar el código
 
+### 1️⃣ Clonar el repositorio
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tu-nombre-usuraio/nombre-repositorio.git
+cd nombre-repositorio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Instalar dependencias
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣Ejecutar el proyecto en local
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abrir el navegador en:
+```bash
+http://localhost:3000
+```
 
-## Learn More
+## 📁 Archivos que contiene el código
 
-To learn more about Next.js, take a look at the following resources:
+A continuación se describen los archivos que han sido creados o modificados durante el desarrollo de la práctica, junto con su función dentro de la página web.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔹 `src/app/page.tsx`
+Página principal de la aplicación.
+Aquí se muestra el buscador, el botón de búsqueda y el listado de países obtenidos desde la API.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔹 `src/app/component/productCard.tsx`
+Componente encargado de representar una tarjeta individual de cada producto.
+Muestra información básica como la imagen, el título, la categoría y el precio.
+Esta tarjeta es la que se muestra en la página principal.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### 🔹 `src/app/component/CardWrapper.tsx`
+Componente reutilizable que actúa como contenedor visual de las tarjetas.
+Recibe children y aplica una estructura común con bordes, sombreado y espaciado para mantener una apariencia uniforme.
+
+---
+
+### 🔹 `src/app/component/SearchBar.tsx`
+Componente encargado de renderizar el campo de búsqueda.
+Recibe por props el valor actual y la función que actualiza el estado del componente padre.
+
+---
+
+### 🔹 `src/app/product/[id]/page.tsx`
+Página de detalle del producto mediante una ruta dinámica.
+Cuando el usuario pulsa sobre un producto, accede a una URL dinámica con su identificador y puede visualizar información más detallada del mismo.
+
+---
+
+### 🔹 `src/app/product/[id]/galery.tsx`
+Componente encargado de mostrar la galería de imágenes del producto dentro de la vista de detalle.
+
+---
+
+### 🔹 `src/lib/api/products.ts`
+Archivo que contiene las funciones encargadas de realizar las peticiones a la API de productos, tanto para buscar productos como para obtener el detalle de uno en concreto.
+
+---
+
+### 🔹 `src/types/product.ts`
+Definición del tipo Product con la estructura de datos que utiliza la aplicación.
+
+---
+
+### 🔹 `src/types/index.ts`
+Archivo de reexportación de tipos para facilitar las importaciones.
+
+---
+
+## Funcionamiento de la aplicación
+La aplicación realiza peticiones a una API pública de productos para mostrar la información en pantalla.
+En la página principal, el usuario puede escribir el nombre de un producto en el buscador y pulsar el botón de búsqueda para localizar los resultados deseados.
+Además, cada tarjeta de producto permite navegar a una vista de detalle con una ruta dinámica, lo que permite generar una página específica para cada producto de manera individual.
+En la vista de detalle se muestra información más completa, como la categoría, la marca, la descripción, el precio, el stock, la valoración, el peso y las dimensiones del producto. También se incluye un enlace para volver a la página principal y realizar una nueva búsqueda.
+
