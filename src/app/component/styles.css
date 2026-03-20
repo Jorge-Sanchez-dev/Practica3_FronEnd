@@ -34,3 +34,13 @@
 .card button:hover {
   background-color: #005bb5;
 }
+
+
+
+.cardWrapper {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: white;
+}
