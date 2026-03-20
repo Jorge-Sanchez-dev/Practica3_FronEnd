@@ -1,0 +1,44 @@
+.back {
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: bold;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.contenedor {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.fotos{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.derecha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.titulo {
+  margin: 10px 0;
+}
+
+.valoracion {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
